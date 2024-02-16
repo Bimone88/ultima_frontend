@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setSongs, selectSong, toggleLikeSong } from "../redux/actions";
 import AlbumCard from "./AlbumCard";
@@ -9,7 +9,7 @@ const HomePage = () => {
   const dispatch = useDispatch();
   const songs = useSelector((state) => state.songs);
   const likedSongs = useSelector((state) => state.likedSongs);
-  const currentSong = useSelector((state) => state.currentSong); // Aggiungi il currentSong dallo stato globale
+  const currentSong = useSelector((state) => state.currentSong);
 
   useEffect(() => {
     const fetchSongs = async (artistName) => {

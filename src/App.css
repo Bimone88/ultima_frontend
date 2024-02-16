@@ -227,3 +227,43 @@ ul {
 .album-image {
   cursor: pointer;
 }
+
+.bi-suit-heart {
+  color: grey !important; 
+}
+
+.bi-suit-heart-fill {
+  color: #1ED760 !important; 
+}
+
+.playerControls .btn-control {
+  background: transparent; 
+  border: none; 
+  padding: 0; 
+}
+
+.playerControls .btn-control i {
+  font-size: 1.5rem; 
+  color: white;
+}
+
+/**/
+.card-img-top {
+  width: 100%;
+  height: auto;
+}
+
+.card-title {
+  font-size: 1rem;
+}
+
+.card-text {
+  font-size: 0.875rem;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+body {
+  margin: 10px;
+}
