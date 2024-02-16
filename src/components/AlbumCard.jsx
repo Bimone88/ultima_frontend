@@ -11,7 +11,7 @@ const AlbumCard = ({ song, isLiked, onSelect, isCurrent }) => {
   };
 
   return (
-    <div className="col text-center">
+    <div className="col-lg-3 col-md-4 col-sm-6 text-center cardsd">
       <img
         className="img-fluid"
         src={song.album.cover_medium}

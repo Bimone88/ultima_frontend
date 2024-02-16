@@ -264,6 +264,15 @@ ul {
 .mb-4 {
   margin-bottom: 1.5rem;
 }
+
+html {
+  margin-top: 20px;
+}
+
 body {
-  margin: 10px;
+  margin-top: 10px;
+}
+
+.cardsd {
+  margin-bottom: 40px;
 }
