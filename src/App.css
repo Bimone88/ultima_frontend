@@ -276,3 +276,20 @@ body {
 .cardsd {
   margin-bottom: 40px;
 }
+
+@media screen and (max-width: 767px) {
+  .fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .music-player {
+    padding-bottom: 56px; 
+  }
+
+  .navbar.fixed-left {
+    display: none; 
+  }
+}

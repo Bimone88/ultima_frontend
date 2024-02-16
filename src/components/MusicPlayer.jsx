@@ -1,21 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import "../App.css";
 
 const MusicPlayer = () => {
   const currentSong = useSelector((state) => state.currentSong);
   const [isPlaying, setIsPlaying] = useState(false); // Stato per tenere traccia della riproduzione
+  const [audio] = useState(new Audio()); // Inizializzo l'elemento audio
 
-  if (!currentSong) return null;
+  useEffect(() => {
+    // Ferma la riproduzione quando la canzone cambia
+    setIsPlaying(false);
+    audio.pause();
+    audio.currentTime = 0;
+    if (currentSong) {
+      audio.src = currentSong.preview;
+    }
+  }, [currentSong, audio]);
 
   const togglePlayPause = () => {
     setIsPlaying(!isPlaying); // Inverte lo stato di isPlaying
+
     if (!isPlaying) {
       console.log("Play");
-      // Logica per avviare la riproduzione della musica
+      audio.play(); // Avvia la riproduzione della musica
     } else {
       console.log("Pause");
-      // Logica per mettere in pausa la musica
+      audio.pause(); // Mette in pausa la musica
     }
   };
 
@@ -66,9 +76,11 @@ const MusicPlayer = () => {
                 </div>
               </div>
               <div className="col-12 text-center">
-                <p>
-                  {currentSong.title} by {currentSong.artist.name}
-                </p>
+                {currentSong && (
+                  <p>
+                    {currentSong.title} by {currentSong.artist.name}
+                  </p>
+                )}
               </div>
             </div>
           </div>
